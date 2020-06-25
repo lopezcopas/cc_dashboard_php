@@ -1,0 +1,55 @@
+{
+    "Customer":{
+        "First":"John",
+        "Last":"Kapy",
+        "Organization":{
+            "Name":"Copy Prints"
+        },
+        "Phone":[
+            {
+                "PhoneNumber":"(555) 555-5555",
+                "Extension":"2384",
+                "Type":"Cell"
+            }
+        ],
+        "Email":[
+            {
+                "EmailAddress":"JohnC@copyprints.com"
+            }
+        ]
+    },
+    "TakenDate": "2020-06-21T12:00",
+    "ProofDate": "2020-06-22T10:30",
+    "DueDate": null,
+    "CurrentUser": null,
+    "Location": "Printing",
+    "PaymentStatus": "Pending",
+    "Total": 20.32,
+    "Items":[
+        {
+            "ID": 1,
+            "Name":"Postcards",
+            "Type": "Printing",
+            "Status":"Pending",
+            "Total":203.28,
+            "Quantity":150,
+            "Width":6.00,
+            "Height":4.00,
+            "Duplex": true,
+            "Color": "Color",
+            "Stock":"100# Matte Cover 13x19",
+            "Note":"Layout like reference in folder.",
+            "Finishing":[
+                {
+                    "Type":"Cutting",
+                    "Quantity":6
+                }
+            ],
+            "AddressLineOne":null,
+            "AddressLineTwo":null,
+            "City":null,
+            "State":null,
+            "Zip":null
+        }
+    ]
+}

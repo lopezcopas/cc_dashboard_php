@@ -1,0 +1,55 @@
+{
+    "Customer":{
+        "First":"John",
+        "Last":"Kapy",
+        "Organization":{
+            "Name":"Copy Prints"
+        },
+        "Phone":[
+            {
+                "PhoneNumber":"(555) 555-5555",
+                "Extension":"2384",
+                "Type":"Cell"
+            }
+        ],
+        "Email":[
+            {
+                "EmailAddress":"JohnC@copyprints.com"
+            }
+        ]
+    },
+    "TakenDate": "2020-06-21T15:30",
+    "ProofDate": null,
+    "DueDate": "2020-06-22T12:30",
+    "CurrentUser": null,
+    "Location": "Printing",
+    "PaymentStatus": "Pending",
+    "Total": 20.32,
+    "Items":[
+        {
+            "ID": 1,
+            "Name":"Flyers",
+            "Type": "Printing",
+            "Status":"Pending",
+            "Total":20.32,
+            "Quantity":50,
+            "Width":8.50,
+            "Height":11.00,
+            "Duplex": false,
+            "Color": "Color",
+            "Stock":"60# Matte Cover 12x18",
+            "Note":"",
+            "Finishing":[
+                {
+                    "Type":"Cutting",
+                    "Quantity":6
+                }
+            ],
+            "AddressLineOne":null,
+            "AddressLineTwo":null,
+            "City":null,
+            "State":null,
+            "Zip":null
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "OrderID":"C-1295834",
+    "OrderName":"Karen's Wedding",
+    "Customer":{
+        "First":"Karen",
+        "Last":"Lastname",
+        "Organization":null,
+        "Phone":[
+            {
+                "PhoneNumber":"(555) 555-5555",
+                "Extension":null,
+                "Type":"Cell"
+            }
+        ],
+        "Email":[
+            {
+                "EmailAddress":"karen@email.com"
+            }
+        ]
+    },
+    "TakenDate": "2020-06-21T15:30",
+    "ProofDate": null,
+    "DueDate": null,
+    "CurrentUser": "John",
+    "Location": "Printing",
+    "PaymentStatus": "Pending",
+    "Total": 20.32,
+    "Items":[
+        {
+            "ID": 1,
+            "Name":"Wedding Invitations",
+            "Type": "Printing",
+            "Status":"Complete",
+            "Total":20.32,
+            "Quantity":50,
+            "Width":5.00,
+            "Height":7.00,
+            "Duplex": true,
+            "Color": "Color",
+            "Stock":"100# Matte Cover 11x17",
+            "Note":"Run at 90% Brightness",
+            "Finishing":[
+                {
+                    "Type":"Cutting",
+                    "Quantity":6
+                }
+            ],
+            "AddressLineOne":null,
+            "AddressLineTwo":null,
+            "City":null,
+            "State":null,
+            "Zip":null
+        },
+        {
+            "ID": 2,
+            "Name":"RSVPs",
+            "Type": "Printing",
+            "Status":"Pending",
+            "Total":20.32,
+            "Quantity":50,
+            "Width":4.00,
+            "Height":6.00,
+            "Duplex": true,
+            "Color": "Color",
+            "Stock":"80# Matte Cover 11x17",
+            "Note":"",
+            "Finishing":[
+                {
+                    "Type":"Cutting",
+                    "Quantity":6
+                }
+            ],
+            "AddressLineOne":null,
+            "AddressLineTwo":null,
+            "City":null,
+            "State":null,
+            "Zip":null
+        },
+        {
+            "ID": 3,
+            "Name":"Shipping",
+            "Type": "Shipping",
+            "Status":"Pending",
+            "Total":20.32,
+            "Quantity":null,
+            "Width":null,
+            "Height":null,
+            "Duplex":null,
+            "Color":null,
+            "Stock":null,
+            "Note":null,
+            "Finishing":null,
+            "AddressLineOne":"2307 Texas Ave. S",
+            "AddressLineTwo":"Suite B",
+            "City":"College Station",
+            "State":"Texas",
+            "Zip":"77845"
+        }
+    ]
+}
