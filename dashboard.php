@@ -14,7 +14,7 @@
         <div class="sidebar-title">Dashboard</div>
         <div class="sidebar-links">
             <a href="" class="sidebar-link sidebar-link-active"><i class="fas fa-chart-pie sidebar-link-icon"></i><span>Overview</span></a>
-            <a href="" class="sidebar-link"><i class="fas fa-file-invoice sidebar-link-icon"></i><span>Orders</span></a>
+            <a href="./orders.php" class="sidebar-link"><i class="fas fa-file-invoice sidebar-link-icon"></i><span>Orders</span></a>
             <a href="" class="sidebar-link"><i class="fas fa-file-invoice-dollar sidebar-link-icon"></i><span>Quote</span></a>
         </div>
     </div>
@@ -74,9 +74,9 @@
                                     <p class="co-item-description"></p>
                                 </div>
                                 <div class="co-item-collapsed-actions">
-                                    <button class="co-item-collapsed-action"><i class="fas fa-check-circle"></i></button>
-                                    <button class="co-item-collapsed-action"><i class="fas fa-edit"></i></button>
-                                    <button class="co-item-collapsed-action"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="co-item-collapsed-action"><i class="fas fa-check-circle co-complete"></i></button>
+                                    <button class="co-item-collapsed-action"><i class="fas fa-edit co-edit"></i></button>
+                                    <button class="co-item-collapsed-action"><i class="fas fa-trash-alt co-delete"></i></button>
                                 </div>
                             </div>
                             <div class="co-item-print">

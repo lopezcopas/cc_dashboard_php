@@ -132,6 +132,9 @@ $(document).on('click', '.order', function(){
             elm.attr('itemid', `${item['ID']}`);
             elm.attr('itemtype', `${item['Type']}`);
             elm.find('.co-item-name').html(item['Name']);
+            if(item['Status'] == 'Complete'){
+                elm.find('.co-complete').css('color', 'rgb(10, 200, 0)');
+            }
             if(item['Type'] == 'Printing'){
                 elm.find('.co-item-description').html(`${item['Type']} | ${item['Width']}x${item['Height']}`);
                 if(item['Note']){
