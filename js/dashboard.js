@@ -26,7 +26,7 @@ $(document).ready(async function(){
             elm.find('.ol-date-date').html(`${date.getDate()} ${date.toLocaleString('default', {month: 'long'})}, ${date.getFullYear()}`);
             elm.find('.ol-date-time').html(date.toLocaleString('default', {hour: 'numeric', minute:'numeric', hour12: true}));
             if(date < currentDate && order['Status'].split(' ')[0] != 'Shelf'){
-                elm.css('background-color', 'rgb(255, 150, 150)');
+                elm.css('background-color', 'rgb(255, 200, 200)');
                 elm.find('.ol-date-date').css('color', '#fff');
                 elm.find('.ol-date-time').css('color', '#fff');
             }
