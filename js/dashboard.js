@@ -1,22 +1,35 @@
 let currentUser = 'Copas';
 
-$(document).ready(function(){
+$(document).ready(async function(){
     //Get Possible Status
-    loadstatuses()
+    await loadstatuses()
     .then(data=>{
-        statuses = data;
+        if(data.Status == 200){
+            statuses = data.Response;
+        }
     });
     //Load Order List
     loadorders()
     .then(data=>{
+        if(data.Status != 200){
+            return;
+        }else{
+            data = data.Response;
+        }
         data.forEach((order, index)=>{
-            var date = new Date(order['DueDate']);
+            var date = new Date(order['DueDate']),
+                currentDate = new Date();
             var elm = $('#hidden-order').clone();
             elm.attr('id', '');
             elm.attr('orderid', order['OrderID']);
             elm.find('.ol-order').html(order['OrderID']);
             elm.find('.ol-date-date').html(`${date.getDate()} ${date.toLocaleString('default', {month: 'long'})}, ${date.getFullYear()}`);
             elm.find('.ol-date-time').html(date.toLocaleString('default', {hour: 'numeric', minute:'numeric', hour12: true}));
+            if(date < currentDate && order['Status'].split(' ')[0] != 'Shelf'){
+                elm.css('background-color', 'rgb(255, 150, 150)');
+                elm.find('.ol-date-date').css('color', '#fff');
+                elm.find('.ol-date-time').css('color', '#fff');
+            }
             elm.find('.ol-customer-name').html(`${order['Customer']['First']} ${order['Customer']['Last']}`);
             if(order['Customer']['OrganizationName']){
                 elm.find('.ol-customer-organization').html(order['Customer']['OrganizationName']);
@@ -24,8 +37,8 @@ $(document).ready(function(){
             elm.find('.ol-status').html(order['Status']);
             if(statuses){
                 statuses.forEach(status => {
-                    if(order['Status'] == status['Status']){
-                        elm.find('.ol-status').css('color', `${status['Color']}`);
+                    if(order['Status'] == status['status']){
+                        elm.find('.ol-status').css('color', `${status['color']}`);
                     }
                 });
             }
@@ -43,7 +56,7 @@ $(document).ready(function(){
 });
 
 async function loadstatuses(){
-    let url = `./testers/json/statuses.json`;
+    let url = `./php/gets/getstatuses.php`;
     let response = await fetch(url, {
         method: 'Post',
         mode: 'cors',
@@ -58,7 +71,7 @@ async function loadstatuses(){
 }
 
 async function loadorders(){
-    let url = `./testers/json/orders.json`;
+    let url = `./php/gets/getorderlist.php`;
     let response = await fetch(url, {
         method: 'Post',
         mode: 'cors',
@@ -83,6 +96,18 @@ $(document).on('click', '.order', function(){
     //Set Current Order
     getorder(orderid)
     .then(data=>{
+        if(data.Status != 200){
+            return;
+        }else{
+            data = data.Response;
+        }
+
+        //Dates
+        var takendate = new Date(data['TakenDate']).toISOString(),
+            proofdate = new Date(data['ProofDate']).toISOString(),
+            duedate = new Date(data['DueDate']).toISOString(),
+            currentDate = new Date();
+
         if(data['OrderName']){
             $('.current-order-card').find('.card-title').html(`Order | ${orderid} | ${data['OrderName']}`);
         }else{
@@ -92,12 +117,15 @@ $(document).on('click', '.order', function(){
         if(data['CurrentUser']){
             $('.co-user').find('span').html(data['CurrentUser']);
             $('.co-user').find('span').css('color', '#555');
+            $('.current-order-card').attr('editable', 'true');
             if(data['CurrentUser'] != currentUser){
                 $('.co-user').find('span').css('color', '#ff3c3c');
+                $('.current-order-card').attr('editable', 'false');
             }
         }else{
             $('.co-user').find('span').html(currentUser);
             $('.co-user').find('span').css('color', '#555');
+            $('.current-order-card').attr('editable', 'true');
             updateuser(orderid);
         }
 
@@ -112,14 +140,14 @@ $(document).on('click', '.order', function(){
         $('.current-order-card').find('.email').find('span').html(data['Customer']['Email'][0]['EmailAddress']);
 
         //Dates
-        $('.current-order-card').find('.takendate').val(data['TakenDate']);
+        $('.current-order-card').find('.takendate').val(takendate.substring(0, takendate.length-1));
         if(data['ProofDate']){
-            $('.current-order-card').find('.proofdate').val(data['ProofDate']);
+            $('.current-order-card').find('.proofdate').val(proofdate.substring(0, proofdate.length-1));
         }else{
             $('.current-order-card').find('.proofdate').val('');
         }
         if(data['DueDate']){
-            $('.current-order-card').find('.duedate').val(data['DueDate']);
+            $('.current-order-card').find('.duedate').val(duedate.substring(0, duedate.length-1));
         }else{
             $('.current-order-card').find('.duedate').val('');
         }
@@ -174,7 +202,7 @@ $(document).on('click', '.order', function(){
 });
 
 async function getorder(orderid){
-    let url = `./testers/json/${orderid}.json`;
+    let url = './php/gets/getorder.php';
     let response = await fetch(url, {
         method: 'Post',
         mode: 'cors',
@@ -182,7 +210,10 @@ async function getorder(orderid){
         credentials: 'same-origin',
         headers:{
             'Content-Type': 'application/json'
-        }
+        },
+        body:JSON.stringify({
+            'order-id':orderid
+        })
     });
     let data = await response.json();
     return data;
