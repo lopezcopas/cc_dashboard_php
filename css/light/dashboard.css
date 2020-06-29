@@ -244,6 +244,7 @@
 .order-list-headers{
     width: 100%;
     height: 40px;
+    padding: 0px 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -305,6 +306,7 @@
 .order{
     width: 100%;
     height: 60px;
+    padding: 0px 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

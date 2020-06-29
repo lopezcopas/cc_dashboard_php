@@ -1,4 +1,4 @@
-let currentUser = 'Nigger';
+let currentUser = 'Someone';
 
 $(document).ready(async function(){
     //Get Possible Status
@@ -163,6 +163,7 @@ $(document).on('click', '.order', function(){
             if(item['Status'] == 'Complete'){
                 elm.find('.co-complete').css('color', 'rgb(10, 200, 0)');
             }
+            elm.find('.co-edit').closest('.co-item-collapsed-action').attr('href', `./orders.php?order=${data['OrderID']}`);
             if(item['Type'] == 'Printing'){
                 elm.find('.co-item-description').html(`${item['Type']} | ${item['Width']}x${item['Height']}`);
                 if(item['Note']){
@@ -191,7 +192,7 @@ $(document).on('click', '.order', function(){
                     elm.find('.print').html(`${item['Quantity']} Count | ${item['Width']}x${item['Height']} | ${item['Stock']} | SS | ${item['Color']}`);
                 }
             }
-            if(item['Finishing'].length == 0-){
+            if(item['Finishing'].length == 0){
                 elm.find('.co-finishing').remove();
             }
             elm.appendTo('.co-items');

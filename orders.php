@@ -35,49 +35,59 @@
         </div>
     </div>
     <div class="wrapper">
-        <div class="card order-list-card">
-            <h1 class="card-title">Order list</h1>
-            <div class="ol-toolbar">
-                <div class="search-container">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Search Keyword here...">
-                </div>
-                <div class="page-controls-container">
-                    <a href="" class="page-control"><i class="fas fa-chevron-left"></i></a>
-                    <a href="" class="page-control">1</a>
-                    <a href="" class="page-control">2</a>
-                    <a href="" class="page-control">3</a>
-                    <a href="" class="page-control"><i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-            <div class="order-list">
-                <div class="order-list-headers">
-                    <h1 class="order-list-header ol-order">Order</h1>
-                    <h1 class="order-list-header ol-date">Due Date</h1>
-                    <h1 class="order-list-header ol-customer">Customer</h1>
-                    <h1 class="order-list-header ol-status">Status</h1>
-                    <h1 class="order-list-header ol-user">User</h1>
-                    <h1 class="order-list-header ol-payment">Payment Status</h1>
-                    <h1 class="order-list-header ol-total">Total</h1>
-                </div>
-                <div class="order-list-body"></div>
-                <div class="hidden">
-                    <div id="hidden-order" oderid="" class="order">
-                        <h1 class="order-list-content ol-order"></h1>
-                        <div class="ol-date">
-                            <h1 class="order-list-content ol-date-date"></h1>
-                            <h1 class="order-list-content ol-date-time"></h1>
-                        </div>
-                        <div class="ol-customer">
-                            <h1 class="order-list-content ol-customer-name"></h1>
-                            <h1 class="order-list-content ol-customer-organization"></h1>
-                        </div>
-                        <h1 class="order-list-content ol-status"></h1>
-                        <h1 class="order-list-content ol-user"></h1>
-                        <h1 class="order-list-content ol-payment"></h1>
-                        <h1 class="order-list-content ol-total"></h1>
+        <div class="section order-list-section" <?php if(isset($_GET['order'])){echo 'style="display: none;"';}?>>
+            <div class="card order-list-card">
+                <h1 class="card-title">Order list</h1>
+                <div class="ol-toolbar">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search Keyword here...">
+                    </div>
+                    <div class="page-controls-container">
+                        <a href="" class="page-control"><i class="fas fa-chevron-left"></i></a>
+                        <a href="" class="page-control">1</a>
+                        <a href="" class="page-control">2</a>
+                        <a href="" class="page-control">3</a>
+                        <a href="" class="page-control"><i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
+                <div class="order-list">
+                    <div class="order-list-headers">
+                        <h1 class="order-list-header ol-order">Order</h1>
+                        <h1 class="order-list-header ol-date">Due Date</h1>
+                        <h1 class="order-list-header ol-customer">Customer</h1>
+                        <h1 class="order-list-header ol-status">Status</h1>
+                        <h1 class="order-list-header ol-user">User</h1>
+                        <h1 class="order-list-header ol-payment">Payment Status</h1>
+                        <h1 class="order-list-header ol-total">Total</h1>
+                    </div>
+                    <div class="order-list-body"></div>
+                    <div class="hidden">
+                        <div id="hidden-order" oderid="" class="order">
+                            <h1 class="order-list-content ol-order"></h1>
+                            <div class="ol-date">
+                                <h1 class="order-list-content ol-date-date"></h1>
+                                <h1 class="order-list-content ol-date-time"></h1>
+                            </div>
+                            <div class="ol-customer">
+                                <h1 class="order-list-content ol-customer-name"></h1>
+                                <h1 class="order-list-content ol-customer-organization"></h1>
+                            </div>
+                            <h1 class="order-list-content ol-status"></h1>
+                            <h1 class="order-list-content ol-user"></h1>
+                            <h1 class="order-list-content ol-payment"></h1>
+                            <h1 class="order-list-content ol-total"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section customer-orders-section" <?php if(isset($_GET['order'])){echo 'style="display: flex;"';}?>>
+            <div class="card customer-order-list-card">
+                <h1 class="card-title">Orders</h1>
+            </div>
+            <div class="card customer-info-card">
+                <h1 class="card-title">Customer</h1>
             </div>
         </div>
     </div>

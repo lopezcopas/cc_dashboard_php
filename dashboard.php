@@ -77,9 +77,9 @@
                                     <p class="co-item-description"></p>
                                 </div>
                                 <div class="co-item-collapsed-actions">
-                                    <button class="co-item-collapsed-action"><i class="fas fa-check-circle co-complete"></i></button>
-                                    <button class="co-item-collapsed-action"><i class="fas fa-edit co-edit"></i></button>
-                                    <button class="co-item-collapsed-action"><i class="fas fa-trash-alt co-delete"></i></button>
+                                    <a class="co-item-collapsed-action"><i class="fas fa-check-circle co-complete"></i></a>
+                                    <a class="co-item-collapsed-action"><i class="fas fa-edit co-edit"></i></a>
+                                    <a class="co-item-collapsed-action"><i class="fas fa-trash-alt co-delete"></i></a>
                                 </div>
                             </div>
                             <div class="co-item-print">

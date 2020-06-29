@@ -2,6 +2,11 @@
     min-width: 840px;
 }
 
+.section{
+    width: 100%;
+    height: 100%;
+}
+
 .order-list-card{
     width: 100%;
     height: 100%;
@@ -132,3 +137,22 @@
     font-weight: bold;
     pointer-events: none;
 }
+
+/** CUSTOMER DISPLAY **/
+.customer-orders-section{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.customer-info-card{
+    width: 400px;
+    height: 500px;
+}
+
+.customer-order-list-card{
+    width: 1140px;
+    height: 100%;
+}
+
