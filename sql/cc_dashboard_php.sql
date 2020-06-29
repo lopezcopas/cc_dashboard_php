@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 06:21 PM
+-- Generation Time: Jun 29, 2020 at 06:26 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -126,7 +126,7 @@ CREATE TABLE `finishing` (
 --
 
 INSERT INTO `finishing` (`id`, `description`, `minimum`) VALUES
-(1, 'Cutting', 0),
+(1, 'Cutting', 0.5),
 (2, 'Laminating', 2),
 (3, 'Hand Trimming', 0.25);
 
@@ -155,7 +155,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `description`, `customer_id`, `organization_id`, `taken_date`, `proof_date`, `due_date`, `editing_user`, `location`, `payment_status`, `total`) VALUES
-('C-2196389', '', 2, 2, '2020-06-24 22:00:00', NULL, '2020-06-26 16:00:00', NULL, 'Production', 'Pending', 0),
+('C-2196389', '', 2, 2, '2020-06-24 22:00:00', NULL, '2020-06-26 16:00:00', 1, 'Production', 'Pending', 0),
 ('C-5381344', 'Invites', 1, 0, '2020-06-25 15:00:00', NULL, '2020-06-25 16:00:00', NULL, 'Printing', 'Pending', 15.07),
 ('C-7266552', 'Summer Flyers', 1, 1, '2020-06-25 23:00:00', '2020-06-26 12:00:00', NULL, NULL, 'Holding', 'Pending', 29.23);
 
@@ -276,7 +276,7 @@ INSERT INTO `statuses` (`id`, `status`, `color`) VALUES
 CREATE TABLE `stocks` (
   `id` int(11) NOT NULL,
   `description` varchar(256) NOT NULL,
-  `coating` int(1) NOT NULL,
+  `coating` varchar(10) NOT NULL,
   `width` float NOT NULL,
   `height` float NOT NULL,
   `type` varchar(20) NOT NULL,
@@ -288,8 +288,40 @@ CREATE TABLE `stocks` (
 --
 
 INSERT INTO `stocks` (`id`, `description`, `coating`, `width`, `height`, `type`, `modified`) VALUES
-(1, '28# Matte Text 8.5x11', 0, 8.5, 11, 'text', '2020-06-25 18:00:00'),
-(2, '80# Matte Cover 8.5x11', 0, 8.5, 11, 'cover', '2020-06-25 20:00:00');
+(1, '28# Matte Text 8.5x11', 'matte', 8.5, 11, 'text', '2020-06-25 18:00:00'),
+(2, '80# Matte Cover 8.5x11', 'matte', 8.5, 11, 'cover', '2020-06-25 20:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(4) NOT NULL,
+  `user_first` varchar(256) NOT NULL,
+  `user_last` varchar(256) NOT NULL,
+  `user_phone` varchar(20) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_name` varchar(256) NOT NULL,
+  `user_password` varchar(256) NOT NULL,
+  `user_role` varchar(20) NOT NULL,
+  `user_auth_level` int(1) NOT NULL,
+  `user_profile_link` varchar(256) NOT NULL,
+  `user_session` varchar(256) NOT NULL,
+  `user_session_expire` datetime NOT NULL,
+  `user_auth_token` varchar(256) NOT NULL,
+  `user_auth_token_expire` datetime NOT NULL,
+  `user_reset_key` varchar(256) NOT NULL,
+  `user_reset_deadline` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_first`, `user_last`, `user_phone`, `user_email`, `user_name`, `user_password`, `user_role`, `user_auth_level`, `user_profile_link`, `user_session`, `user_session_expire`, `user_auth_token`, `user_auth_token_expire`, `user_reset_key`, `user_reset_deadline`) VALUES
+(1, 'Copas', 'Lopez', '(512) 931-9744', 'lopezcopas@gmail.com', 'lopezcopas', '$2y$10$YfvDF3.88IuBRmvLZFQFBuYVeiS1IPeXj8h7LqPbBXAl0sD5v6hUm', 'Desktop Publishing', 2, 'https://coplop.dreamhosters.com/resources/account-placeholder.png', '$2y$10$KlKvrwngGvmguB8HgWRxveB0WB68YuKqylTcajLuH1UvN8D4d.fO.', '2020-07-02 18:14:24', '$2y$10$zru6Ms/RiQ4Z/E0fGpmJSeuy42N4dGFZyMTsnVRvY.9VE7gXAf6jy', '2020-06-25 18:14:54', 'CC-8113999', '2020-05-23 12:40:07');
 
 --
 -- Indexes for dumped tables
@@ -362,6 +394,12 @@ ALTER TABLE `stocks`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -424,6 +462,12 @@ ALTER TABLE `statuses`
 --
 ALTER TABLE `stocks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

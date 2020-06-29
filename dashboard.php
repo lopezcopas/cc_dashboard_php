@@ -16,6 +16,9 @@
             <a href="" class="sidebar-link sidebar-link-active"><i class="fas fa-chart-pie sidebar-link-icon"></i><span>Overview</span></a>
             <a href="./orders.php" class="sidebar-link"><i class="fas fa-file-invoice sidebar-link-icon"></i><span>Orders</span></a>
             <a href="" class="sidebar-link"><i class="fas fa-file-invoice-dollar sidebar-link-icon"></i><span>Quote</span></a>
+            <a href="" class="sidebar-link"><i class="fas fa-print sidebar-link-icon"></i><span>Presses</span></a>
+            <a href="./stocks.php" class="sidebar-link"><i class="fas fa-paper-plane sidebar-link-icon"></i><span>Stocks</span></a>
+            <a href="" class="sidebar-link"><i class="fas fa-hammer sidebar-link-icon"></i><span>Finishing</span></a>
         </div>
     </div>
     <div class="topbar">
@@ -82,6 +85,7 @@
                             <div class="co-item-print">
                                 <p class="co-item-text note"></p>
                                 <p class="co-item-text print"></p>
+                                <p class="co-finishing">Finishing</p>
                             </div>
                             <div class="co-item-shipping">
                                 <p class="co-item-text addresslineone"></p>

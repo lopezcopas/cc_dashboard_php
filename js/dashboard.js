@@ -1,4 +1,4 @@
-let currentUser = 'Copas';
+let currentUser = 'Nigger';
 
 $(document).ready(async function(){
     //Get Possible Status
@@ -191,6 +191,9 @@ $(document).on('click', '.order', function(){
                     elm.find('.print').html(`${item['Quantity']} Count | ${item['Width']}x${item['Height']} | ${item['Stock']} | SS | ${item['Color']}`);
                 }
             }
+            if(item['Finishing'].length == 0-){
+                elm.find('.co-finishing').remove();
+            }
             elm.appendTo('.co-items');
         });
         $('.current-order-card').find('.location').focus();
@@ -244,4 +247,13 @@ $(document).on('click', '.co-item', function(){
         }
         $(event.target).css('height', 'auto');
     }
+});
+
+$('.location').change(function(){
+    if($('.current-order-card').attr('editable') != 'true'){
+        console.log('This order is not editable');
+        return;
+    }
+
+    console.log($(event.target).val());
 });

@@ -74,6 +74,17 @@
             $organization = null;
         }
 
+        //Get Editing User
+        if(isset($getOrder['editing_user'])){
+            $getUserName = $dbConn->prepare("SELECT user_first FROM users WHERE user_id=:userID");
+            $getUserName->execute(array(':userID'=>$getOrder['editing_user']));
+            $getUserName = $getUserName->fetch(PDO::FETCH_ASSOC);
+        }else{
+            $getUserName = array(
+                "user_first"=>null
+            );
+        }
+
         //Get Items
         $getItems = $dbConn->prepare("SELECT * FROM orders_items WHERE order_id=:orderID");
         $getItems->execute(array(':orderID'=>$getOrder['id']));
@@ -136,7 +147,7 @@
             "TakenDate"=>$getOrder['taken_date'],
             "ProofDate"=>$getOrder['proof_date'],
             "DueDate"=>$getOrder['due_date'],
-            "CurrentUser"=>$getOrder['editing_user'],
+            "CurrentUser"=>$getUserName['user_first'],
             "Location"=>$getOrder['location'],
             "PaymentStatus"=>$getOrder['payment_status'],
             "Total"=>$getOrder['total'],

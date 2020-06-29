@@ -14,6 +14,7 @@
     if($getOrder = $getOrder->fetchall(PDO::FETCH_ASSOC)){
         $orders = array();
         foreach($getOrder as $order){
+            $getUserName = null;
             if(!isset($order['due_date'])){
                 $order['due_date'] = $order['proof_date'];
             }
@@ -32,6 +33,12 @@
                 );
             }
 
+            if(isset($order['editing_user'])){
+                $getUserName = $dbConn->prepare("SELECT user_first FROM users WHERE user_id=:userID");
+                $getUserName->execute(array(':userID'=>$order['editing_user']));
+                $getUserName = $getUserName->fetch(PDO::FETCH_ASSOC);
+            }
+
             if($order['due_date'])
 
             array_push($orders, array(
@@ -43,7 +50,7 @@
                     "OrganizationName"=>$getOrganization['name']
                 ),
                 "Status"=>$order['location'],
-                "CurrentUser"=>$order['editing_user'],
+                "CurrentUser"=>$getUserName['user_first'],
                 "PaymentStatus"=>$order['payment_status'],
                 "Total"=>$order['total']
             ));
