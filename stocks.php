@@ -42,6 +42,7 @@
                         <i class="fas fa-search search-icon"></i>
                         <input type="text" class="search-input" placeholder="Search Stock here...">
                     </div>
+                    <button id="add-stock" class="cc-button">+ New</button>
                 </div>
                 <div class="stock-list">
                     <div class="sl-headers">
@@ -72,7 +73,8 @@
     <div class="popup">
         <div class="modal"></div>
         <div class="popup-card stock-editor">
-            <h1 class="card-title">Current Card</h1>
+            <h1 class="card-title">New Stock</h1>
+            <div class="popup-body">Test</div>
         </div>
     </div>
     <script src="./js/stocks.js"></script>

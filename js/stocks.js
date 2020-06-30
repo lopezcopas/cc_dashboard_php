@@ -38,7 +38,13 @@ async function getstocks(sort=null){
     return data;
 }
 
-//Open Stock Editor Popup
+//Open Stock Editor Popup - NEW
+$('#add-stock').click(function(){
+    $('.popup').css('display', 'flex');
+    $('.stock-editor').find('.card-title').html('New Stock');
+});
+
+//Open Stock Editor Popup - EDIT
 $(document).on('click', '.stock-edit', async function(){
     await getstock($(event.target).closest('.stock').attr('stockid'))
     .then(data=>{
@@ -47,7 +53,7 @@ $(document).on('click', '.stock-edit', async function(){
         }
         var stock = data.Response;
         $('.popup').css('display', 'flex');
-        $('.stock-editor').find('.card-title').html(stock['Description']);
+        $('.stock-editor').find('.card-title').html('Edit Stock');
     });
 });
 

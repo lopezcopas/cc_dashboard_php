@@ -50,6 +50,7 @@
                         <a href="" class="page-control">3</a>
                         <a href="" class="page-control"><i class="fas fa-chevron-right"></i></a>
                     </div>
+                    <button id="new-order" class="cc-button">+ New</button>
                 </div>
                 <div class="order-list">
                     <div class="order-list-headers">
@@ -82,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="section customer-orders-section" <?php if(isset($_GET['order'])){echo 'style="display: flex;"';}?>>
+        <div class="section customer-orders-section" <?php if(isset($_GET['customer'])){echo 'style="display: flex;"';}?>>
             <div class="card customer-order-list-card">
                 <h1 class="card-title">Orders</h1>
             </div>
@@ -90,6 +91,38 @@
                 <h1 class="card-title">Customer</h1>
             </div>
         </div>
+        <div class="section single-order-section" <?php if(isset($_GET['order'])){echo 'style="display: flex;"';}?>>
+        <div class="card customer-order-list-card">
+                <h1 class="card-title">Order <?php if(isset($_GET['order'])){echo $_GET['order'];}?></h1>
+            </div>
+            <div class="card customer-info-card">
+                <h1 class="card-title">Customer</h1>
+            </div>
+        </div>
+        <div class="section new-order-section">
+            <div class="card customer-order-list-card">
+                <h1 id="editable-title" class="card-title">New Order</h1>
+                <div class="card-body">
+                    <div class="item-list">
+                        <div itemid="1" class="item">
+                            <div class="item-collapsed">
+                                <div class="item-collapsed-info">
+                                    <h1 class="item-name">Item One</h1>
+                                    <p class="item-description">Item Description</p>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="item-action"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card customer-info-card">
+                <h1 class="card-title">Customer</h1>
+            </div>
+        </div>
     </div>
+    <script src="./js/orders.js"></script>
 </body>
 </html>

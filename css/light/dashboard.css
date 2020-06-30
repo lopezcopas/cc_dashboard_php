@@ -262,6 +262,7 @@
 /** ORDER LIST WIDTHS **/
 .ol-order{
     width: 11%;
+    pointer-events: all;
 }
 
 .ol-date{

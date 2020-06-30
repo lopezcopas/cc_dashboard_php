@@ -23,6 +23,7 @@ $(document).ready(async function(){
             elm.attr('id', '');
             elm.attr('orderid', order['OrderID']);
             elm.find('.ol-order').html(order['OrderID']);
+            elm.find('.ol-order').attr('href', `./orders.php?order=${data['OrderID']}`);
             elm.find('.ol-date-date').html(`${date.getDate()} ${date.toLocaleString('default', {month: 'long'})}, ${date.getFullYear()}`);
             elm.find('.ol-date-time').html(date.toLocaleString('default', {hour: 'numeric', minute:'numeric', hour12: true}));
             if(date < currentDate && order['Status'].split(' ')[0] != 'Shelf'){

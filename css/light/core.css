@@ -30,6 +30,7 @@ html, body{
     box-shadow: 2px 2px 4px 0px #aaa;
     font-size: 14px;
     font-weight: 500;
+    outline: none;
 }
 
 .cc-button:hover{
@@ -289,11 +290,21 @@ html, body{
 }
 
 .popup-card{
+    position: relative;
     color: #333;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 2px 2px 4px 0px #777;
     z-index: 10;
+}
+
+.popup-body{
+    width: 100%;
+    height: calc(100% - 40px);
+    padding: 10px;
+    position: absolute;
+    top: 40px;
+    left: 0;
 }
 
 /** --==MEDIA QUERIES==-- **/

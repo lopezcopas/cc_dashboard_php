@@ -11,6 +11,11 @@
 .sl-toolbar{
     width: 100%;
     height: 40px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .search-container{
@@ -105,6 +110,10 @@
 
 .stock-action-icon{
     pointer-events: none;
+}
+
+.stock-edit:hover{
+    color: rgb(235, 235, 41);
 }
 
 /** STOCK EDITOR **/
