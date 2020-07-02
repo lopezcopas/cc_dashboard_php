@@ -18,7 +18,7 @@
         <div class="sidebar-title">Dashboard</div>
         <div class="sidebar-links">
             <a href="./dashboard.php" class="sidebar-link"><i class="fas fa-chart-pie sidebar-link-icon"></i><span>Overview</span></a>
-            <a href="" class="sidebar-link sidebar-link-active"><i class="fas fa-file-invoice sidebar-link-icon"></i><span>Orders</span></a>
+            <a href="./orders.php" class="sidebar-link sidebar-link-active"><i class="fas fa-file-invoice sidebar-link-icon"></i><span>Orders</span></a>
             <a href="" class="sidebar-link"><i class="fas fa-file-invoice-dollar sidebar-link-icon"></i><span>Quote</span></a>
             <a href="" class="sidebar-link"><i class="fas fa-print sidebar-link-icon"></i><span>Presses</span></a>
             <a href="./stocks.php" class="sidebar-link"><i class="fas fa-paper-plane sidebar-link-icon"></i><span>Stocks</span></a>
@@ -103,6 +103,22 @@
             <div class="card customer-order-list-card">
                 <h1 id="editable-title" class="card-title">New Order</h1>
                 <div class="card-body">
+                    <div class="new-order-info">
+                        <div class="new-order-dates">
+                            <div class="cc-input-group">
+                                <label for="new-taken-date" class="cc-input-label">Taken Date</label>
+                                <input name="new-taken-date" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group">
+                                <label for="new-proof-date" class="cc-input-label">Proof Date</label>
+                                <input name="new-proof-date" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group">
+                                <label for="new-due-date" class="cc-input-label">Due Date</label>
+                                <input name="new-due-date" type="datetime-local" class="cc-input">
+                            </div>
+                        </div>
+                    </div>
                     <div class="item-list">
                         <div itemid="1" class="item">
                             <div class="item-collapsed">
