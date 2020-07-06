@@ -94,6 +94,27 @@
         <div class="section single-order-section" <?php if(isset($_GET['order'])){echo 'style="display: flex;"';}?>>
         <div class="card customer-order-list-card">
                 <h1 class="card-title">Order <?php if(isset($_GET['order'])){echo $_GET['order'];}?></h1>
+                <div class="card-body">
+                    <div class="new-order-info">
+                        <div class="new-order-dates">
+                            <div class="cc-input-group no-date-input-group">
+                                <label for="new-taken-date" class="cc-input-label">Taken Date</label>
+                                <input name="new-taken-date" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group no-date-input-group">
+                                <label for="new-proof-date" class="cc-input-label">Proof Date</label>
+                                <input name="new-proof-date" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group no-date-input-group">
+                                <label for="new-due-date" class="cc-input-label">Due Date</label>
+                                <input name="new-due-date" type="datetime-local" class="cc-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-list">
+                    
+                    </div>
+                </div>
             </div>
             <div class="card customer-info-card">
                 <h1 class="card-title">Customer</h1>
@@ -104,16 +125,22 @@
                 <h1 id="editable-title" class="card-title">New Order</h1>
                 <div class="card-body">
                     <div class="new-order-info">
+                        <div class="no-order-number-container">
+                            <div class="cc-input-group no-number-input-group">
+                                <label for="new-order-number" class="cc-input-label">Order Number</label>
+                                <input id="new-order-id" name="new-order-number" type="text" class="cc-input">
+                            </div>
+                        </div>
                         <div class="new-order-dates">
-                            <div class="cc-input-group">
+                            <div class="cc-input-group no-date-input-group">
                                 <label for="new-taken-date" class="cc-input-label">Taken Date</label>
                                 <input name="new-taken-date" type="datetime-local" class="cc-input">
                             </div>
-                            <div class="cc-input-group">
+                            <div class="cc-input-group no-date-input-group">
                                 <label for="new-proof-date" class="cc-input-label">Proof Date</label>
                                 <input name="new-proof-date" type="datetime-local" class="cc-input">
                             </div>
-                            <div class="cc-input-group">
+                            <div class="cc-input-group no-date-input-group">
                                 <label for="new-due-date" class="cc-input-label">Due Date</label>
                                 <input name="new-due-date" type="datetime-local" class="cc-input">
                             </div>
@@ -127,10 +154,14 @@
                                     <p class="item-description">Item Description</p>
                                 </div>
                                 <div class="item-actions">
-                                    <button class="item-action"></button>
+                                    <button class="item-action"><i class="fas fa-trash-alt co-delete"></i></button>
                                 </div>
                             </div>
+                            <div class="item-body printing-section">
+                                Test
+                            </div>
                         </div>
+                        <div class="new-item">+ New Item</div>
                     </div>
                 </div>
             </div>
