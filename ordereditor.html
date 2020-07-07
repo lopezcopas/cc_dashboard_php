@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Editor SAMPLE</title>
+    <link rel="stylesheet" href="./css/light/core.css">
+    <link rel="stylesheet" href="./css/light/ordereditor.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="order-body">
+            <div class="card order-info-card">
+                <h1 id="order-title" class="card-title">Order Name (Click to edit...)</h1>
+                <h1 class="order-number">C-1234567</h1>
+                <div class="card-body">
+                    <div class="order-info-section">
+                        <div class="dates-container">
+                            <div class="cc-input-group date-input-group">
+                                <label for="takenDate" class="cc-input-label">Taken Date</label>
+                                <input name="takenDate" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group date-input-group">
+                                <label for="proofDate" class="cc-input-label">Proof Date</label>
+                                <input name="proofDate" type="datetime-local" class="cc-input">
+                            </div>
+                            <div class="cc-input-group date-input-group">
+                                <label for="dueDate" class="cc-input-label">Due Date</label>
+                                <input name="dueDate" type="datetime-local" class="cc-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card customer-info-card">
+                <h1 class="card-title">Customer</h1>
+            </div>
+        </div>
+    </div>
+    <script src="./js/ordereditor.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+.order-body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.order-info-card{
+    width: calc(100% - 420px);
+    height: 100%;
+}
+
+.customer-info-card{
+    width: 400px;
+    height: 500px;
+}
+
+#editable-title{
+    width: calc(100% - 120px);
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    color: #555;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-info-section{
+    width: 100%;
+    min-height: 100px;
+}
+
+.order-number{
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: #777;
+    font-size: 18px;
+    text-align: right;
+}
+
+#editable-order-number{
+    width: 73px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #777;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.dates-container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-input-group{
+    width: calc(33% - 20px);
+    height: 40px;
+}
